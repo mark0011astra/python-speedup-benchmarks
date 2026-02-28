@@ -1,0 +1,28 @@
+| Test | N | Slow | Fast | Slow(sec) | Fast(sec) | Speedup(x) |
+|---|---:|---|---|---:|---:|---:|
+| T1_PREPEND | 10000 | list.insert(0, i) | deque.appendleft(i) | 0.229309 | 0.002925 | 78.39 |
+| T2_CONTAINS | 10000 | target in list_data | target in set_data | 0.000374 | 0.000001 | 598.33 |
+| T3_CONCAT | 10000 | loop with += | ''.join(parts) | 0.003342 | 0.000387 | 8.65 |
+| T1_PREPEND | 30000 | list.insert(0, i) | deque.appendleft(i) | 2.062963 | 0.008935 | 230.90 |
+| T2_CONTAINS | 30000 | target in list_data | target in set_data | 0.001120 | 0.000001 | 1792.05 |
+| T3_CONCAT | 30000 | loop with += | ''.join(parts) | 0.009965 | 0.001146 | 8.69 |
+| T1_PREPEND | 50000 | list.insert(0, i) | deque.appendleft(i) | 5.709706 | 0.014988 | 380.95 |
+| T2_CONTAINS | 50000 | target in list_data | target in set_data | 0.001866 | 0.000001 | 2985.11 |
+| T3_CONCAT | 50000 | loop with += | ''.join(parts) | 0.016599 | 0.001903 | 8.72 |
+
+test_id,n,slow_method,fast_method,slow_sec,fast_sec,speedup_x
+T1_PREPEND,10000,"list.insert(0, i)",deque.appendleft(i),0.229309291,0.002925167,78.391863
+T2_CONTAINS,10000,target in list_data,target in set_data,0.000373959,0.000000625,598.329825
+T3_CONCAT,10000,loop with +=,''.join(parts),0.003342250,0.000386500,8.647477
+T1_PREPEND,30000,"list.insert(0, i)",deque.appendleft(i),2.062963000,0.008934500,230.898539
+T2_CONTAINS,30000,target in list_data,target in set_data,0.001120041,0.000000625,1792.051967
+T3_CONCAT,30000,loop with +=,''.join(parts),0.009965209,0.001146250,8.693748
+T1_PREPEND,50000,"list.insert(0, i)",deque.appendleft(i),5.709705750,0.014988166,380.947592
+T2_CONTAINS,50000,target in list_data,target in set_data,0.001865708,0.000000625,2985.110081
+T3_CONCAT,50000,loop with +=,''.join(parts),0.016599292,0.001903417,8.720786
+
+Summary
+T1_PREPEND_max_speedup_x: 380.95
+T2_CONTAINS_max_speedup_x: 2985.11
+T3_CONCAT_max_speedup_x: 8.72
+overall_max_speedup_x: 2985.11
